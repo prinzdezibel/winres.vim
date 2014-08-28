@@ -7,13 +7,21 @@ let g:p2#winres#version = '0.0.1'
 " Resize current window by +/- 5 
 "
 " <C-Left>
-nnoremap <ESC>[5D :ResizeWindow west<cr>
-" <C-Right>
-nnoremap <ESC>[5C :ResizeWindow east<cr>
-" <C-Down>
-nnoremap <ESC>[B :ResizeWindow south<cr>
-" <C-Up>
-nnoremap <ESC>[A :ResizeWindow north<cr>
+if has('gui_running')
+  nnoremap <silent> <D-S-LEFT> :WindowResize west<cr>
+  nnoremap <silent> <D-S-RIGHT> :WindowResize east<cr>
+  nnoremap <silent> <D-S-DOWN> :WindowResize south<cr>
+  nnoremap <silent> <D-S-UP> :WindowResize north<cr>
+else
+  " <C-Left>
+  nnoremap <ESC>[5D :WindowResize west<cr>
+  " <C-Right>
+  nnoremap <ESC>[5C :WindowResize east<cr>
+  " <C-Down>
+  nnoremap <ESC>[B :WindowResize south<cr>
+  " <C-Up>
+  nnoremap <ESC>[A :WindowResize north<cr>
+endif
 
 
 function! s:windowResize(cardinalDirection) 
