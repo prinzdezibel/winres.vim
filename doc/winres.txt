@@ -1,0 +1,95 @@
+*winres.txt*    Resize buffer windows with a simple keystroke
+*Window resize plugin*
+
+
+
+
+
+                    Reference Manual
+
+
+====================================================================
+CONTENTS                                           *winres-contents*
+
+    1. Intro......................................|winres-intro|
+    2. Commands...................................|winres-commands|
+    3. Keymapping.................................|winres-keymapping|
+    4. About......................................|winres-about|
+    5. License....................................|winres-license|
+
+====================================================================
+1. Intro                                              *winres-intro*
+
+Winres.vim is a window resize utility that allows to resize buffer
+windows in a sane and intuitive manner. This meand no complex 
+character sequences involved and of course no mouse movement needed.
+
+====================================================================
+2. Commands                                        *winres-commands*
+
+:WindowResize <direction>
+
+  <direction>  up, down, left, right
+
+Resizes the focused window through moving the reference border in the 
+given direction. Reference border is the right border of 
+the window for horizontal resizes and the bottom border for vertical
+resizes. If there's no more right-most (resp. bottom-most) window,
+the reference point for the resize action is the left window border
+(resp. top window border). The window is resized 
+
+====================================================================
+3. Keymapping                                    *winres-keymapping*
+
+
+For GUI enabled Vim versions the following keys are mapped:
+
+  <D-S-Right>   Win/Command + Shift + Right arrow  :Winresize right
+  <D-S-Left>    Win/Command + Shift + Left arrow   :Winresize left
+  <D-S-Up>      Win/Command + Shift + Up arrow     :Winresize up
+  <D-S-Down>    Win/Command + Shift + Down arrow   :Winresize down
+
+For non-gui Vim versions the following keys are mapped by default:
+(Because there seems no way to map non-standard keys like Command/Win)
+
+  <C-Right>   Win/Command + Shift + Right arrow  :Winresize right
+  <C-Left>    Win/Command + Shift + Left arrow   :Winresize left
+  <C-Up>      Win/Command + Shift + Up arrow     :Winresize up
+  <C-Down>    Win/Command + Shift + Down arrow   :Winresize down
+
+====================================================================
+4. About                                              *winres-about*
+
+  Find the latest version of syntastic at:
+
+  http://github.com/prinzdezibel/winres.vim
+
+
+====================================================================
+5. License                                          *winres-license*
+
+Copyright (c) 2014, projekt&partner
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice,
+this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE 
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
