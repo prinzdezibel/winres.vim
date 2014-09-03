@@ -42,20 +42,13 @@ the reference point for the resize action is the left window border
 3. Keymapping                                    *winres-keymapping*
 
 
-For GUI enabled Vim versions the following keys are mapped:
+The following keys are mapped:
 
-  <D-S-Right>   Win/Command + Shift + Right arrow  :Winresize right
-  <D-S-Left>    Win/Command + Shift + Left arrow   :Winresize left
-  <D-S-Up>      Win/Command + Shift + Up arrow     :Winresize up
-  <D-S-Down>    Win/Command + Shift + Down arrow   :Winresize down
+  Alt + l       :Winresize right
+  Alt + h       :Winresize left
+  Alt + k       :Winresize up
+  Alt + j       :Winresize down
 
-For non-gui Vim versions the following keys are mapped by default:
-(Because there seems no way to map non-standard keys like Command/Win)
-
-  <C-Right>   Win/Command + Shift + Right arrow  :Winresize right
-  <C-Left>    Win/Command + Shift + Left arrow   :Winresize left
-  <C-Up>      Win/Command + Shift + Up arrow     :Winresize up
-  <C-Down>    Win/Command + Shift + Down arrow   :Winresize down
 
 ====================================================================
 4. About                                              *winres-about*

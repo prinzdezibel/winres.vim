@@ -4,27 +4,14 @@
 "
 let g:p2#winres#version = '0.0.1'
 
-" Resize current window by +/- 5 
+" Resize current window by +/- 5
 "
-" <C-Left>
-if has('gui_running')
-  nnoremap <silent> <D-S-LEFT> :WindowResize left<cr>
-  nnoremap <silent> <D-S-RIGHT> :WindowResize right<cr>
-  nnoremap <silent> <D-S-DOWN> :WindowResize down<cr>
-  nnoremap <silent> <D-S-UP> :WindowResize top<cr>
-else
-  " <C-Left>
-  nnoremap <ESC>[5D :WindowResize left<cr>
-  " <C-Right>
-  nnoremap <ESC>[5C :WindowResize right<cr>
-  " <C-Down>
-  nnoremap <ESC>[B :WindowResize down<cr>
-  " <C-Up>
-  nnoremap <ESC>[A :WindowResize top<cr>
-endif
+nnoremap ˙ :WindowResize left<cr>
+nnoremap ∆ :WindowResize down<cr>
+nnoremap ˚ :WindowResize up<cr>
+nnoremap ¬ :WindowResize right<cr>
 
-
-function! s:windowResize(direction) 
+function! s:windowResize(direction)
   let g:nr = winnr()
   if a:direction == 'left' || a:direction == 'right'
     exe 'wincmd l'
@@ -32,7 +19,7 @@ function! s:windowResize(direction)
     exe 'wincmd k'
     if g:nr == winnr()
         " no window in top of this one
-        if a:direction == 'top'
+        if a:direction == 'up'
             exe '5 winc -'
         elseif a:direction == 'down'
             exe '5 winc +'
@@ -40,7 +27,7 @@ function! s:windowResize(direction)
     else
         " Move cursor back to window where we were before (down)
         exe g:nr.'wincmd w'
-        if a:direction == 'top'
+        if a:direction == 'up'
             exe '5 winc +'
         elseif a:direction == 'down'
             exe '5 winc -'
